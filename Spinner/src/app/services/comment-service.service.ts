@@ -26,7 +26,7 @@ export class CommentService {
     }
 
     delete(comment: PostComment): Observable<PostComment> {
-        return this.http.delete(this.baseUrl + '/posts/comment/' + comment.id).pipe(map(response => response as PostComment));
+        return this.http.delete(this.baseUrl + '/posts/comment/' + comment.id, {withCredentials: true}).pipe(map(response => response as PostComment));
     }
 
 }

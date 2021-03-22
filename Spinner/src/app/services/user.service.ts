@@ -50,7 +50,7 @@ export class UserService {
     }
 
     logout() {
-        this.http.delete(this.baseUrl + '/login');
+        this.http.delete(this.baseUrl + '/login', {withCredentials: true});
         this.loggedInUser = null;
     }
 
@@ -59,10 +59,10 @@ export class UserService {
     }
     
     getUserById(id: number) {
-    return this.http.get<User>(this.baseUrl + '/' + id);
+    return this.http.get<User>(this.baseUrl + '/' + id, {withCredentials: true});
     }
 
     updateUser(user: User) {
-    return this.http.put(this.baseUrl + '/' + user.id, user);
+    return this.http.put(this.baseUrl + '/' + user.id, user, {withCredentials: true});
     }
 }

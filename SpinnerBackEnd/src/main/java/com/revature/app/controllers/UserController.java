@@ -24,7 +24,7 @@ import com.revature.app.services.UserService;
  * POST user/register register a user
  */
 @RestController
-//@CrossOrigin(origins="http://localhost:4200", allowCredentials="true")
+@CrossOrigin(origins="http://rev-spinner.s3-website.us-east-2.amazonaws.com", allowCredentials="true")
 @RequestMapping(path = "/user")
 public class UserController {
 	private UserService userServ;

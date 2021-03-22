@@ -17,6 +17,7 @@ import { map,catchError }from 'rxjs/operators';
 export class EditUserService {
 
   constructor(private http:HttpClient) { }
+  /*
   saveProfilePic(profile_pic){
     return this.http.post('http://localhost:4200/edit-profile/SaveProfilePic', profile_pic).subscribe((response: Response) => response.json())
   }
@@ -25,11 +26,12 @@ export class EditUserService {
   }
   deleteProfilePic(){
     return this.http.post('http://localhost:4200/edit-profile/deleteProfilePic', {'id':'id'}).subscribe((response: Response)=> response.json())
-  }
-/*
+  }*/
+  
+
   upload(file):Observable<any>{
     const formData=new FormData(); //creating our form data
     formData.append("file", file, file.name); //stores whatever file user uploads
-    return this.http.post(this.baseUrl, formData) //this will http post our formData request
-  }*/
+    return this.http.post('http://localhost:4200/edit-profile/SaveProfilePic', formData, {withCredentials: true}) //this will http post our formData request
+  }
 }
