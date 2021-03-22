@@ -106,26 +106,16 @@ public class PostController {
 		if (loggedUser != null) {
 			Post post = postServ.getPostById(postId);
 			if (post != null) {
-				
-				System.out.println("before calling add like");
+				System.out.println("before calling add like post");
 				Post newPost = postServ.addLike(post, loggedUser);
-				
-				System.out.println("after calling add like");
-
-				loggedUser = userServ.getUserById(loggedUser.getId());
-				session.setAttribute("user", loggedUser);
-				System.out.println("new post response" + newPost);
-				System.out.println("users liked posts" + loggedUser);
-
+				System.out.println("after calling add like post");
 
 				return ResponseEntity.ok(newPost);
-				
-
 			}
-			
 			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+					
 	}
 	
 	
@@ -158,4 +148,11 @@ public class PostController {
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 
 	}
+	
+	
+	
+	
+	
+	
+	
 }

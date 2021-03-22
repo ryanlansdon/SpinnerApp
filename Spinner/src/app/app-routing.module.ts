@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BandViewComponent } from './band-view/band-view.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditUserComponent } from './edit-user/edit-user.component'
+import { LikedpostsComponent } from './likedposts/likedposts.component';
+
 
 const routes: Routes = [
   {
@@ -21,6 +23,11 @@ const routes: Routes = [
     path:'edit-profile',
     component:EditUserComponent
   },
+
+  {
+    path:'likedposts',
+    component:LikedpostsComponent
+  }
 ]
 
 

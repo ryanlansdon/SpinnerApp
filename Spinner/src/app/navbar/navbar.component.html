@@ -19,15 +19,29 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link font-weight-bold" routerLink="bands" style="color:#4a148c;">Join Bands</a>
+                <a class="nav-link font-weight-bold" routerLink="likedposts" style="color:#4a148c;">My liked posts</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="edit-profile"style="color:#4a148c;">Edit Profile</a>
-            </li>            
-            <li class="nav-item">
-                <a class="nav-link" (click)="this.userServ.logout()" style="color:#4a148c;">Logout</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" routerLink="bands" style="color:#4a148c;" routerLinkActive="active">Join Bands</a>
+            </li>
+           
         </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            
+            <li class="nav-item avatar dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" class="img-fluid rounded-circle z-depth-0"></a>
+              <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">welcome {{this.userServ.loggedInUser.username}}</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="this.userServ.logout()">Log out</a>
+              </div>
+            </li>
+          </ul>
     </links>
     <link>
 </mdb-navbar>

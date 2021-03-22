@@ -41,12 +41,33 @@ export class PostItemComponent implements OnInit {
     }
   }
 
+  
+
   addLike(): void {
-    this.post.likes++;
+//     var found = false;
+// for(var i = 0; i < this.userServ.loggedInUser.likedPosts.length; i++) {
+//     if (this.userServ.loggedInUser.likedPosts[i].title == this.post.title) {
+//         found = true;
+//         break;
+//     }
+// }
+  if(!this.userServ.loggedInUser.likedPosts.some(p => p.id===this.post.id)){
+    this.post.likes++;    
+} else{
+    alert("you already liked this post");      
+      
+}
+   
+    
     this.likesServ.addLike(this.post.id).subscribe(response => {this.post=response});
   }
 
   addLikeComment(comment:any): void {
+    if(!this.userServ.loggedInUser.likedComments.some(c => c.id===comment.id)){
+      comment.likes++;
+    }else{
+      alert("you already liked this comment");
+     }
     this.likesServ.addLikeComment(comment.id).subscribe(response => {this.post.comments});
   }
 

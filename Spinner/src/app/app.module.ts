@@ -25,6 +25,7 @@ import { EditUserComponent } from './edit-user/edit-user.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditUserService } from './services/edit-user.service';
 import { from } from 'rxjs';
+import { LikedpostsComponent } from './likedposts/likedposts.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { from } from 'rxjs';
     DashboardComponent,
     BandViewComponent,
     NavbarComponent,
-    EditUserComponent
+    EditUserComponent,
+    LikedpostsComponent
   ],
   imports: [
     BrowserModule,

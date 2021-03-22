@@ -101,7 +101,7 @@ export class EditUserComponent implements OnInit {
   login(): void {
     
   }
-  OnSave = function(profile_pic, isValid: boolean){
+  onSave = function(profile_pic, isValid: boolean){
     profile_pic.mode = this.valbutton;
     this.editService.saveProfilePic(profile_pic).subscribe(data => { alert(data.data);
       this.ngOnInit();

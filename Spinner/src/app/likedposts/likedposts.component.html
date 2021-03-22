@@ -1,0 +1,20 @@
+<div style="margin-top: 80px;">
+<mdb-card class="mb-4" style="background-color:#e0e0e0;" *ngFor= "let post of this.userServ.loggedInUser.likedPosts">
+    <mdb-card-body>
+        <mdb-card-title>
+            <div class="row">
+                <div class="col-10">
+                    <h4 class="font-weight-bold">{{ post.title }}</h4>
+                    <p>Posted: {{ post.postTime }}</p>
+                </div>
+                <div class="col-2 my-auto mx-auto text-center">
+                    <a (click)="addLike()">
+                        <mdb-icon far icon="heart" size="lg" class="text-dark" aria-hidden="true"></mdb-icon>
+                    </a>
+                    <p style="color:black;"><small>{{ post.likes }}</small></p>
+                </div>
+            </div>
+        </mdb-card-title>
+    </mdb-card-body>
+</mdb-card>
+</div>

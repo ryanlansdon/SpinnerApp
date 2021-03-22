@@ -6,6 +6,5 @@ logs
 node_modules/
 jspm_packages/
 /.metadata/
-application.properties
 
 *.class

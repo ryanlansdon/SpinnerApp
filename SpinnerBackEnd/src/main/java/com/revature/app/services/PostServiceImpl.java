@@ -109,20 +109,26 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Transactional
 	public Post addLike(Post p, User u) {
 		// TODO Auto-generated method stub
 		
 		int numLikes = p.getLikes();
-		numLikes = numLikes+1;
-		p.setLikes(numLikes);
+		if (!(u.getLikedPosts().contains(p))) {
+			numLikes = numLikes+1;
+			p.setLikes(numLikes);
+			u = userDAO.getOne(u.getId());
+			Set<Post> likedPosts = u.getLikedPosts();
+			likedPosts.add(p);
+			u.setLikedPosts(likedPosts);
+			userDAO.save(u);
+			postDAO.save(p);
+			System.out.println("I executed the if ");
+			return p;
+			}
 		
-		u = userDAO.getOne(u.getId());
-		Set<Post> likedPosts = u.getLikedPosts();
 		
-		likedPosts.add(p);
-		u.setLikedPosts(likedPosts);
-		userDAO.save(u);
-		postDAO.save(p);
+		System.out.println("I executed the else ");
 		return p;
 	}
 	
@@ -136,21 +142,18 @@ public class PostServiceImpl implements PostService {
 		// TODO Auto-generated method stub
 		
 		int numLikes = pc.getLikes();
-		numLikes = numLikes+1;
-		pc.setLikes(numLikes);
-		
-		u = userDAO.getOne(u.getId());
-		Set<PostComment> likedcomment = u.getLikedComments();
-		likedcomment.add(pc);
-		u.setLikedComments(likedcomment);;
-		userDAO.save(u);
-		commentDAO.save(pc);
-		return pc;	}
-
-	
-
-	
-
-	
+		if (!(u.getLikedComments().contains(pc))) {
+			numLikes = numLikes+1;
+			pc.setLikes(numLikes);
+			u = userDAO.getOne(u.getId());
+			Set<PostComment> likedcomment = u.getLikedComments();
+			likedcomment.add(pc);
+			u.setLikedComments(likedcomment);
+			userDAO.save(u);
+			commentDAO.save(pc);
+			return pc;	
+			}
+		return pc;
+	}
 
 }

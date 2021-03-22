@@ -23,7 +23,11 @@
                     <th>Comments</th>
                 </tr>
                 <tr *ngFor="let comment of this.post.comments">
-                    {{ comment.comment }} <mdb-icon far icon="heart" size="1x" class="red-text" aria-hidden="true" (click)="addLikeComment(comment)"></mdb-icon>  {{ comment.likes }} 
+                    {{ comment.comment }}
+                    <a (click)="addLikeComment(comment)">
+                        <mdb-icon far icon="heart" size="1x" class="red-text" aria-hidden="true"></mdb-icon>
+                    </a> 
+                    {{comment.likes}} 
                     <button type="button" (click)="editComment(comment)" *ngIf="comment.user_id == userServ.loggedInUser.id">Edit</button>
                     <button type="button" (click)="deleteComment(comment)" *ngIf="comment.user_id == userServ.loggedInUser.id">Delete</button>
                 </tr>

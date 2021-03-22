@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LikesService } from '../services/likes.service';
+import { UserService } from '../services/user.service'
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class ResponseItemComponent implements OnInit {
   @Input() response: QuestionResponse;
   track: Track;
 
-  constructor(private getTrackServ: GetTrackService, private likesServ: LikesService) { }
+  constructor(private getTrackServ: GetTrackService, private likesServ: LikesService, private userServ: UserService) { }
 
   ngOnInit(): void {
     this.getTrackServ.getTrack(this.response.song.songKey).subscribe(
@@ -27,8 +29,12 @@ export class ResponseItemComponent implements OnInit {
     );
   }
   
-  addLikeQuestionResp(): void{
-    this.response.likes++;
+  addLikeQuestionResp(response:any): void{
+    if(!this.userServ.loggedInUser.likedQotdResponses.some(qr => qr.id===response.id)){
+      response.likes++;
+    }else{
+      alert("you already liked this comment");
+     }
     this.likesServ.addLikeQR(this.response.id).subscribe(response => {this.response=response});
   }
 

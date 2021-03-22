@@ -75,7 +75,7 @@ private UserDAO userDao;
 		Set<QuestionResponse> dqResponses = dq.getResponses();
 		QuestionResponse res = dqResponses.stream().filter(a -> a.getId() == dqrId).collect(Collectors.toList()).get(0);
 		int numLikes = res.getLikes();
-		if (!loggedUser.getLikedQotdResponses().contains(dqResponses)) {
+		if (!(loggedUser.getLikedQotdResponses().contains(dqResponses))) {
 			numLikes = numLikes+1;
 			res.setLikes(numLikes);
 			loggedUser = userDao.getOne(loggedUser.getId());

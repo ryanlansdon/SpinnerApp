@@ -1,6 +1,6 @@
-<mdb-card *ngIf="track" class="m-2">
-    <mdb-card-body class="p-0">
-        <div class="row" style="background-color:#191414;">
+<mdb-card *ngIf="track" class="mb-2">
+    <mdb-card-body>
+        <div class="row" style="background-color:rgba(25,20,20,1);">
             <div class="col-4">
                 <br><img class="searchResultImg" [src]="track.album.images[0].url" [alt]="track.name"><br><br>
             </div>
@@ -9,8 +9,8 @@
                 <p style="color:#DCDCDC;">{{ track.artists[0].name }}</p>
             </div>
             <div class="col-2 my-auto mx-auto text-center">
-                <mdb-icon far icon="heart" size="lg" class="white-text" aria-hidden="true" (click)="addLikeQuestionResp();"></mdb-icon><br>
-                <p style="color:white;"><small>{{ response.likes }}</small></p>
+                <mdb-icon far icon="heart" size="2x" class="white-text" aria-hidden="true" (click)="addLikeQuestionResp(response)"></mdb-icon><br>
+                <p style="color:white;">{{ response.likes }}</p>
             </div>
         </div>
     </mdb-card-body>
