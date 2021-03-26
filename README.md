@@ -25,7 +25,7 @@ TODO:
   <li>Run `git clone https://github.com/ryanlansdon/SpinnerApp.git` in a terminal</li>
   <li>Create or connect to an AWS RDS PostgreSQL database, and in a database management app such as DBeaver, run the SpinnerDDL.sql file</li>
   <li>In the application.properties file, be sure to set up like so:
-    ```
+    
     spring.datasource.url= <insert_database_public_dns_here>
     spring.datasource.username=<insert_database_username_here>
     spring.datasource.password=<insert_database_password_here>
