@@ -1,4 +1,4 @@
-# SpinnerApp
+# Spinner
 Spinner is a music-based social media app where users can connect with others over their love of music. Spinners (Spinner users) will be able to post their favorite songs and albums, as well as comment on and rate music posts. Spinner will have daily/weekly prompts (i.e “Songs that remind you of your childhood”) that users can respond to and vote on their favorite responses. Spinners can also create and follow groups based on their specific music interests.
 
 ## Technologies used
@@ -7,6 +7,7 @@ Spinner is a music-based social media app where users can connect with others ov
   <li>Spring Boot</li>
   <li>Spring Security</li>
   <li>AWS RDS, EC2, and S3</li>
+  <li>Spotify API</li>
 </ul>
 
 ## Features
@@ -22,7 +23,7 @@ TODO:
 
 ## Getting started
 <ol>
-  <li>Run ` git clone https://github.com/ryanlansdon/SpinnerApp.git ` in a terminal</li>
+  <li>Run  ` git clone https://github.com/ryanlansdon/SpinnerApp.git ` in a terminal</li>
   <li>Create or connect to an AWS RDS PostgreSQL database, and in a database management app such as DBeaver, run the SpinnerDDL.sql file</li>
   <li>In the application.properties file, be sure to set up like so:
     
@@ -34,6 +35,11 @@ TODO:
   <li>Switch the CrossOrigin tags to http://localhost:4200 and run the backend as a Spring Boot app</li>
   <li>Run `ng serve` in the front end directory and navigate to http://localhost:4200</li>
 </ol>
+
+## Usage
+On the left side you will find the question of the day, you may submit a response.<br>
+When submitting a song for any purpose, the Spotify API will automatically pull the song's information, including album cover and artist name.<br>
+Click the 'new post' button on a band snapshot to create a post in that band. You can comment on or like other posts as well.
 
 ## Contributors
 <ul>
