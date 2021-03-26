@@ -31,4 +31,14 @@ TODO:
     spring.datasource.password=<insert_database_password_here>
     spring.datasource.driverClassName=org.postgresql.Driver
   </li>
+  <li>Switch the CrossOrigin tags to http://localhost:4200 and run the backend as a Spring Boot app</li>
+  <li>Run `ng serve` in the front end directory and navigate to http://localhost:4200</li>
 </ol>
+
+## Contributors
+<ul>
+  <li>Ryan Lansdon (project lead)</li>
+  <li>Kurt Werber</li>
+  <li>Sabrina Djeddi</li>
+  <li>Mojid Salawu</li>
+</ul>
