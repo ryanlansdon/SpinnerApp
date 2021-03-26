@@ -30,6 +30,5 @@ TODO:
     spring.datasource.username=<insert_database_username_here>
     spring.datasource.password=<insert_database_password_here>
     spring.datasource.driverClassName=org.postgresql.Driver
-    ```
   </li>
 </ol>
