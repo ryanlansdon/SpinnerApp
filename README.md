@@ -40,7 +40,8 @@ TODO:
 <img src="spinnerscreenshot.png">
 On the left side you will find the question of the day, you may submit a response.<br>
 When submitting a song for any purpose, the Spotify API will automatically pull the song's information, including album cover and artist name.<br>
-Click the 'new post' button on a band snapshot to create a post in that band. You can comment on or like other posts as well.
+Click the 'new post' button on a band snapshot to create a post in that band. You can comment on or like other posts as well.<br>
+One can search posts by songs, to see what other people have to say about music you like.<br>
 
 ## Contributors
 <ul>
