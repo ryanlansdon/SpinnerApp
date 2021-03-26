@@ -1,1 +1,2 @@
 # SpinnerApp
+Spinner is a music-based social media app where users can connect with others over their love of music. Spinners (Spinner users) will be able to post their favorite songs and albums, as well as comment on and rate music posts. Spinner will have daily/weekly prompts (i.e “Songs that remind you of your childhood”) that users can respond to and vote on their favorite responses. Spinners can also create and follow groups based on their specific music interests.
