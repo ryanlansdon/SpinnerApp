@@ -22,7 +22,7 @@ TODO:
 
 ## Getting started
 <ol>
-  <li>Run `git clone https://github.com/ryanlansdon/SpinnerApp.git` in a terminal</li>
+  <li>Run ` git clone https://github.com/ryanlansdon/SpinnerApp.git ` in a terminal</li>
   <li>Create or connect to an AWS RDS PostgreSQL database, and in a database management app such as DBeaver, run the SpinnerDDL.sql file</li>
   <li>In the application.properties file, be sure to set up like so:
     
