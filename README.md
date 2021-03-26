@@ -1,2 +1,34 @@
 # SpinnerApp
 Spinner is a music-based social media app where users can connect with others over their love of music. Spinners (Spinner users) will be able to post their favorite songs and albums, as well as comment on and rate music posts. Spinner will have daily/weekly prompts (i.e “Songs that remind you of your childhood”) that users can respond to and vote on their favorite responses. Spinners can also create and follow groups based on their specific music interests.
+
+## Technologies used
+<ul>
+  <li>Angular 10</li>
+  <li>Spring Boot</li>
+  <li>Spring Security</li>
+  <li>AWS RDS, EC2, and S3</li>
+</ul>
+
+## Features
+<ul>
+  <li>Users can create and join bands</li>
+  <li>Users can contribute posts in their bands, and like and comment on others'</li>
+  <li>Each day a new Question of the Day is available, which users can submit their response too and vote on their favorites</li>
+</ul>
+TODO:
+<ul>
+  <li>Adopt a RESTful approach to authentication and authorization to prevent issues with EC2</li>
+</ul>
+
+## Getting started
+<ol>
+  <li>Run `git clone https://github.com/ryanlansdon/SpinnerApp.git` in a terminal</li>
+  <li>Create or connect to an AWS RDS PostgreSQL database, and in a database management app such as DBeaver, run the SpinnerDDL.sql file</li>
+  <li>In the application.properties file, be sure to set up like so:
+    ```
+    spring.datasource.url= <insert_database_public_dns_here>
+    spring.datasource.username=<insert_database_username_here>
+    spring.datasource.password=<insert_database_password_here>
+    spring.datasource.driverClassName=org.postgresql.Driver
+    ```
+  </li>
